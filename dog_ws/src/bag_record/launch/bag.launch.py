@@ -27,7 +27,8 @@ def generate_launch_description():
         'ros2', 'bag', 'record',
         '--output', full_bag_path,
         '/livox/imu',
-        '/livox/lidar'
+        '/livox/lidar',
+        '/gps_path'
     ]
 
     return LaunchDescription([
