@@ -48,7 +48,7 @@ def generate_launch_description():
         启动 lio-sam 算法
     '''
     start_action_group = launch.actions.GroupAction([
-        # launch.actions.TimerAction(period=0.5, actions=[bag_record_launch]),
+        launch.actions.TimerAction(period=0.5, actions=[bag_record_launch]),
         # launch.actions.TimerAction(period=1.0, actions=[driver_launch2]),
         launch.actions.TimerAction(period=2.5, actions=[lio_sam_launch]),
     ])
@@ -60,6 +60,6 @@ def generate_launch_description():
     ])
 
     return launch.LaunchDescription([
-        # start_action_group
-        play_action_group
+        start_action_group
+        # play_action_group
     ])
