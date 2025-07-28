@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="dog_bot" xmlns:xacro="http://tixiaoshan.github.io/">
+  <xacro:property name="PI" value="3.1415926535897931" />
+  <xacro:property name="body_length" value="0.7" />    <!-- 70cm -->
+  <xacro:property name="body_width" value="0.31" />    <!-- 31cm -->
+  <xacro:property name="body_height" value="0.4" />    <!-- 40cm -->
+  
+  <!-- 基础坐标系：机器狗几何中心 -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.8 0.5"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Livox激光雷达：顶部前方 -->
+  <link name="livox_frame">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="livox_frame" />
+    <!-- 前25cm, 高20cm (高度/2) -->
+    <origin xyz="0.25 0 ${body_height/2}" rpy="0 0 0" />
+  </joint>
+
+  <!-- IMU：靠近重心位置 -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.02"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <!-- 位于机器中心 -->
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+  </joint>
+</robot>
