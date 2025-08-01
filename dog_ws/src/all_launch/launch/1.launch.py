@@ -60,6 +60,6 @@ def generate_launch_description():
     ])
 
     return launch.LaunchDescription([
-        start_action_group
-        # play_action_group
+        # start_action_group
+        play_action_group
     ])
