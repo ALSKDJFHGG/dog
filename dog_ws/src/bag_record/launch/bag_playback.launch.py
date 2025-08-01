@@ -9,7 +9,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # 使用绝对路径指定 bag 目录
-    bag_data_dir = '/home/hzy/study/ros2/projects/dog/dog_ws/src/bag_record/bags/sensor_data_20250724_093154'
+    bag_data_dir = '/home/hzy/study/dog/data/bags/sicence_build_around'
     print(f"Bag data dir: {bag_data_dir}")
     if not os.path.exists(bag_data_dir):
         raise RuntimeError(f"Bag directory does not exist: {bag_data_dir}")
