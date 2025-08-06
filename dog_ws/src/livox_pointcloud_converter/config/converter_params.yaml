@@ -1,0 +1,8 @@
+livox_to_pointcloud2_converter:
+  ros__parameters:
+    input_topic: "/livox/lidar"
+    output_topic: "/livox/pointcloud2"
+    output_frame_id: "livox_frame"
+    use_intensity: true
+    use_tag: false
+    use_line: false

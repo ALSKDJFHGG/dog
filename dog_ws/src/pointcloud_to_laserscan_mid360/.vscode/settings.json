@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "atomic": "cpp",
-        "memory": "cpp",
-        "thread": "cpp",
-        "chrono": "cpp",
-        "utility": "cpp"
-    }
-}

@@ -1,0 +1,14 @@
+#include "livox_pointcloud_converter/livox_to_pointcloud2.hpp"
+
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+  
+  rclcpp::NodeOptions options;
+  auto node = std::make_shared<livox_pointcloud_converter::LivoxToPointCloud2Component>(options);
+  
+  rclcpp::spin(node);
+  rclcpp::shutdown();
+  
+  return 0;
+}

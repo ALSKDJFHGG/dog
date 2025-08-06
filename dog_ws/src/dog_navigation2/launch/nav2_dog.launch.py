@@ -1,8 +1,7 @@
 '''
-作者: 小鱼
-公众号: 鱼香ROS
-QQ交流群: 2642868461
-描述: Nav2 launch启动文件
+1, move_base 导航节点
+2, map_server 地图服务节点
+3, amcl 定位节点
 '''
 import os
 from ament_index_python.packages import get_package_share_directory
